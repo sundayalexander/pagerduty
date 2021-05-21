@@ -8,7 +8,7 @@ api_token = 'u+d5nXN_3J3W9PW8LDZQ'
 user_id = 'PGIYB7K'
 
 
-def main():
+def save_incident_to_csv():
     # Initialize Session conectin with pagerduty
     session = APISession(api_token)
     # Fetch Incidents list
@@ -22,11 +22,13 @@ def main():
 
         for incident in incidents:
             file.write(F"{','.join([str(incident.get(column, '')) for column in columns])}\n")
-    print('Task completed, data saved to incidents.csv')
+
+        # Return the saved file name
+        return 'incidents.csv'
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    main()
+    save_incident_to_csv()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
