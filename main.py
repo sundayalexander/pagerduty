@@ -19,10 +19,8 @@ def save_incident_to_csv():
     # Save to file
     with open('incidents.csv', 'w+') as file:
         file.write(F"{','.join(columns)}\n")
-
-        for incident in incidents:
-            file.write(F"{','.join([str(incident.get(column, '')) for column in columns])}\n")
-
+        # Format data and write to file.
+        file.write(''.join([F"{','.join([str(incident.get(column, '')) for column in columns])}\n" for incident in incidents]))
         # Return the saved file name
         return 'incidents.csv'
 
