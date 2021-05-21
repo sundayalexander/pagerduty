@@ -14,9 +14,8 @@ def main():
     # Fetch Incidents list
     incidents = session.list_all('incidents')
     # Generate Column titles
-    columns = ['incident_number', 'title', 'description', 'created_at', 'status', 'incident_key', 'summary', 'self',
-               'assigned_via', 'escalation_policy', 'last_status_change_at', 'is_mergeable', 'urgency', 'id', 'type',
-               'html_url']
+    columns = ['incident_number', 'id', 'title', 'description', 'created_at', 'last_status_change_at', 'status',
+               'incident_key', 'summary', 'is_mergeable', 'assigned_via', 'urgency', 'type', 'html_url']
     # Save to file
     with open('incidents.csv', 'w+') as file:
         file.write(F"{','.join(columns)}\n")
