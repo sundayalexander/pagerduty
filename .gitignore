@@ -1,0 +1,10 @@
+.idea/*
+media/*
+crawler/config.json
+*__pycache__*
+*.log
+!media/*.png
+venv/*
+celerybeat-schedule.*
+celerybeat.pid
+spider/db.sqlite3
