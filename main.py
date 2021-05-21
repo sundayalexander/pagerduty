@@ -9,7 +9,7 @@ user_id = 'PGIYB7K'
 
 
 def save_incident_to_csv():
-    # Initialize Session conectin with pagerduty
+    # Initialize Session conection with pagerduty
     session = APISession(api_token)
     # Fetch Incidents list
     incidents = session.list_all('incidents')
